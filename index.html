@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Developer Jokes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        header {
+            background: #333;
+            color: #fff;
+            padding: 10px 20px;
+            text-align: center;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .joke {
+            padding: 10px;
+            margin: 10px 0;
+            border-bottom: 1px solid #ddd;
+        }
+        .joke:last-child {
+            border-bottom: none;
+        }
+        .joke-id {
+            font-weight: bold;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Developer Jokes</h1>
+    </header>
+    <div class="container" id="jokes-container">
+        <p>Loading jokes...</p>
+    </div>
+    <script>
+        // Jokes JSON data
+        const jokes = [
+            { "id": 1, "joke": "Why do programmers prefer dark mode? Because light attracts bugs!" },
+            { "id": 2, "joke": "How many programmers does it take to change a light bulb? None, that's a hardware problem!" },
+            { "id": 3, "joke": "Why do Java developers wear glasses? Because they don't C#!" },
+            { "id": 4, "joke": "What is a programmer's favorite hangout place? Foo Bar!" },
+            { "id": 5, "joke": "Why was the developer broke? Because they used up all their cache!" },
+            { "id": 6, "joke": "Why do programmers hate nature? It has too many bugs!" },
+            { "id": 7, "joke": "What's a programmer's favorite type of music? Algo-rhythm." },
+            { "id": 8, "joke": "Why do programmers always mix up Christmas and Halloween? Because Oct 31 == Dec 25!" },
+            { "id": 9, "joke": "What do you call a programmer from Finland? Nerdic." },
+            { "id": 10, "joke": "Why did the programmer quit his job? He didn't get arrays." },
+            { "id": 11, "joke": "Why was the function sad? It didn’t return anything." },
+            { "id": 12, "joke": "Why did the programmer go broke? Because he lost his domain in a bet." },
+            { "id": 13, "joke": "What do you call a group of 8 Hobbits? A Hobbyte." },
+            { "id": 14, "joke": "Why do Python programmers prefer to eat rice? Because they don't like whitespace!" },
+            { "id": 15, "joke": "How do you comfort a JavaScript bug? You console it." }
+        ];
+
+        // Render jokes
+        const jokesContainer = document.getElementById('jokes-container');
+        jokesContainer.innerHTML = jokes.map(joke => `
+            <div class="joke">
+                <p class="joke-id">Joke #${joke.id}</p>
+                <p>${joke.joke}</p>
+            </div>
+        `).join('');
+    </script>
+</body>
+</html>
